@@ -6,7 +6,7 @@ Landing page and privacy policy for [Luxel: Daily Light Puzzle](https://play.goo
 | --- | --- |
 | `/` and `/cs/` | landing page (en, cs) |
 | `/privacy/` and `/cs/privacy/` | privacy policy (en, cs) – linked from the app (`Links.PRIVACY_POLICY`) and Play Console |
-| `/app-ads.txt` | AdMob authorized sellers – replace the placeholder publisher ID |
+| `/app-ads.txt` | AdMob authorized sellers (live copy at the domain root, see below) |
 
 Plain static HTML, no build step. Screenshots in `img/` come from `docs/store` in the app repository (Roborazzi `StoreGraphicsTest`), resized to 540×960 WebP.
 
@@ -18,11 +18,9 @@ Plain static HTML, no build step. Screenshots in `img/` come from `docs/store` i
 
 ## app-ads.txt
 
-AdMob reads `app-ads.txt` only from the **root of the domain** of the developer website in the Play listing, so
-`https://ruzickaond.github.io/luxel-web/app-ads.txt` is not enough. Either:
-
-- buy a domain (e.g. `luxel.app`), add a `CNAME` file with it here and use `https://luxel.app` as the website in Play Console, or
-- create the user site repository `RuzickaOnd/ruzickaond.github.io` with a copy of `app-ads.txt` at its root
-  (served at `https://ruzickaond.github.io/app-ads.txt`).
+AdMob reads `app-ads.txt` only from the **root of the domain** of the developer website in the Play listing, so the
+copy here is not the one AdMob uses. The live file is in the user site repository
+[`RuzickaOnd/ruzickaond.github.io`](https://github.com/RuzickaOnd/ruzickaond.github.io), served at
+`https://ruzickaond.github.io/app-ads.txt`. Keep both copies the same; with a custom domain this copy becomes the live one.
 
 If the domain changes, update `Links.WEB` in the app, `sitemap.xml`, `robots.txt` and the canonical links.
